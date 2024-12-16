@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <script> 
+    document.body.innerHTML = `
+    <label for="number">Nhập số nguyên n: </label>
+    <input type="number" id="number" />
+    <button id="checkButton">Kiểm tra</button>
+    <p id="result"></p>
+`;
+
+document.getElementById("checkButton").addEventListener("click", () => {
+    const n = parseInt(document.getElementById("number").value, 10);
+    const canBacHai = Math.floor(Math.sqrt(n));
+    const result = document.getElementById("result");
+
+    if (canBacHai * canBacHai === n) {
+        result.textContent = `${n} là số chính phương.`;
+    } else {
+        result.textContent = `${n} không phải là số chính phương.`;
+    }
+});
+
+   </script> 
+</body>
+</html>
